@@ -53,5 +53,10 @@ int main()
 	bool b[9][9] = {};
 	helper(b);
 	cout << b[4][2] << endl;
+	vector<string> st(2, "manav");
+	for(string &s: st) s = "aa" + s;
+	cout << st[0] << "\n";
+	vector<string> kt;
+	kt.insert(kt.end(), st.begin(), st.end());
 	return 0;
 }
