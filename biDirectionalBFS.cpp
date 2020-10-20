@@ -71,7 +71,7 @@ int lengthLadder(string beginWord,string endWord, unordered_set<string>& wordLis
 			}
 		}
 	}
-
+	
 	return 0;
 }
 
