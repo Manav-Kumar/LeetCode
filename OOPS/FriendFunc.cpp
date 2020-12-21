@@ -10,6 +10,7 @@ public:
 
 class Tempo;
 
+void getTemp();
 
 class Truck{
 private:
@@ -26,7 +27,13 @@ public:
 
 	friend void Bus::print(Truck &t);//Can be declared below any type of access specifier
 	friend class Tempo;//	We can make a whole class as a friend
+	friend void getTemp();
 };
+
+
+void getTemp(){
+	cout << "This is just a temporary function\n";
+}
 
 void Bus::print(Truck &t){
 	t.x = 90;

@@ -28,6 +28,9 @@ public:
 	virtual void print(){
 		cout << "Employee\n";
 	}
+	void temp(){
+		cout << "Employee temp\n";
+	}
 	
 };
 

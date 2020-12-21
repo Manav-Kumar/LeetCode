@@ -58,13 +58,28 @@ vvi reconstructMatrix(int upper,int lower,vi &colsum){
 }
 
 //	Largest Values From Intervals
+bool comp(vi &a, vi &b){
+	return a[0] > b[0];
+}
 
+int largestValsFromLabels(vi &values, vi &labels, int num_wanted, int use_limit){
+	int n = values.size(), ans = 0, totalct = 0;
+	vvi arr;
+	rep(i, 0, n) arr.push_back({values[i], labels[i]});
+	sort(arr.begin(), arr.end(), comp);
+	map<int,int> labmp;
+	rep(i, 0, n){
+		int v = arr[i][0], l = arr[i][1];
+		if(labmp[l] < use_limit){
+			ans += v, labmp[l] += 1, totalct += 1;
+		}
+		if(totalct == num_wanted) return ans;
+	}
+	return ans;
+}
 
 
 int main(){
-	int tomatoSlices, cheeseSlices;
-	cin >> tomatoSlices >> cheeseSlices;
-	vi ans = numOfBurgers(tomatoSlices, cheeseSlices);
 	return 0;
 }
 
